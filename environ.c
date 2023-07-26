@@ -31,26 +31,26 @@ char *get_env(info_t *info, const char *name)
 }
 
 /**
- * _setenv - intialisation du noveau environs variable 
+ * _mysetenv - intialisation du noveau environs variable 
  * @info: Structure
  */
-int _setenv(info_t *info)
+int _mysetenv(info_t *info)
 {
 	if (info->argc != 3)
 	{
 		_eputs("Incorrect number of arguements\n");
 		return (1);
 	}
-	if (_setenv(info, info->argv[1], info->argv[2]))
+	if (_mysetenv(info, info->argv[1], info->argv[2]))
 		return (0);
 	return (1);
 }
 
 /**
- * _unsetenv - eliminez un environs variable
+ * _myunsetenv - eliminez un environs variable
  * @info: Structure 
  */
-int _unsetenv(info_t *info)
+int _myunsetenv(info_t *info)
 {
 	int i;
 
@@ -60,7 +60,7 @@ int _unsetenv(info_t *info)
 		return (1);
 	}
 	for (i = 1; i <= info->argc; i++)
-		_unsetenv(info, info->argv[i]);
+		_myunsetenv(info, info->argv[i]);
 
 	return (0);
 }

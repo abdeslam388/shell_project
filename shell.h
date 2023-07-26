@@ -196,14 +196,14 @@ void free_info(info_t *, int);
 /*environ.c */
 char *get_env(info_t *, const char *);
 int _myenv(info_t *);
-int _setenv(info_t *);
-int _unsetenv(info_t *);
+int _mysetenv(info_t *);
+int _myunsetenv(info_t *);
 int populate_env_list(info_t *);
 
 /*get_env.c */
-char **gets_environ(info_t *);
-int _unsetenv(info_t *, char *);
-int _setenv(info_t *, char *, char *);
+char **get_environ(info_t *);
+int _myunsetenv(info_t *, char *);
+int _mysetenv(info_t *, char *, char *);
 
 /*_history.c */
 char *get_history_file(info_t *info);
@@ -232,4 +232,6 @@ void check_chain(info_t *, char *, size_t *, size_t, size_t);
 int replace_alias(info_t *);
 int replace_virs(info_t *);
 int replace_string(char **, char *);
+
 #endif
+

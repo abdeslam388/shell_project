@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
- * gets_environs -retournez la copie d'un string 
+ * get_environs -retournez la copie d'un string 
  * @info: Structure
  */
-char **gets_environs(info_t *info)
+char **get_environs(info_t *info)
 {
 	if (!info->environ || info->env_changed)
 	{
@@ -16,11 +16,11 @@ char **gets_environs(info_t *info)
 }
 
 /**
- * _unsetenv - effacez ou eliminez un envirenement
+ * _myunsetenv - effacez ou eliminez un envirenement
  * @info: Structure
  * @var: variable strign
  */
-int _unsetenv(info_t *info, char *var)
+int _myunsetenv(info_t *info, char *var)
 {
 	list_t *node = info->env;
 	size_t i = 0;
@@ -46,11 +46,11 @@ int _unsetenv(info_t *info, char *var)
 }
 
 /**
- * _setenv - Initialisation d'un neauveaux envirenemt
+ * _mysetenv - Initialisation d'un neauveaux envirenemt
  * @info:structure
  * @value: the string env var value
  */
-int _setenv(info_t *info, char *var, char *value)
+int _mysetenv(info_t *info, char *var, char *value)
 {
 	char *buf = NULL;
 	list_t *node;
@@ -82,3 +82,5 @@ int _setenv(info_t *info, char *var, char *value)
 	free(buf);
 	info->env_changed = 1;
 	return(0);
+}
+
