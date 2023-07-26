@@ -93,10 +93,10 @@ int replace_alias(info_t *info)
 }
 
 /**
- * replace_virs - replaces virs in tokenized 
+ * replace_vars - replaces virs in tokenized 
  * @info: leparametre structure
  */
-int replace_virs(info_t *info)
+int replace_vars(info_t *info)
 {
 	int i = 0;
 	list_t *node;
