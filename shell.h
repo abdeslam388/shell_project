@@ -11,6 +11,15 @@
 #include <limits.h>
 #include <fcntl.h>
 #include <errno.h>
+/*betty.c*/
+void Hello_message(void);
+int char_special(char *line, ssize_t read, int *exit_stat);
+void no_nul(char *line);
+char **_parser(char *line);
+void built_ins(char *line, char **args, char **env, int *exit_stat);
+int my_path(char *cmd, char **args, char **env, int *exit_stat);
+void exec_env(int status, char **args, int *exit_stat, int *tall);
+ssize_t _getline(char **lineptr, size_t *n, FILE *stream);
 
 /* red - wrt les  buffers */
 #define READ_BUF_SIZE 1024
@@ -55,7 +64,7 @@ void grid_free(char **gridd, int _height);
 int char_special(char *buffer, ssize_t byt, int *exit_st);
 
 
-
+/*_getline function*/
 
 ssize_t _getline(char **line, size_t *n, FILE *stream);
 char *str_tok(char *str, const char *delimiters);
@@ -70,7 +79,7 @@ int _getsize(const char *str);
 void _puts(const char *str);
 int _putchar(char c);
 
-/*setenv unsetenv*/
+/*setenv and unsetenv*/
 void _setenv(char **arr);
 void _unsetenv(char **arr);
 char *get_env(const char *glob_v);
