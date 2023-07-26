@@ -9,7 +9,7 @@
 #include <string.h>
 
 /**
- * Hello_message - Writes "Hello, ALX!" to the std output.
+ * Hello_message - Writess "Hello, ALX!" to the standard output.
  */
 void Hello_message(void)
 {
@@ -17,13 +17,12 @@ void Hello_message(void)
 }
 
 /**
- * main - Entry point of the progra
- *
- * Return: 0 to me
+ * main - Entry point of the prg
+ * Return: 0 to indicate successful execution.
  */
 int main(void)
 {
 	Hello_message();
-
 	return (0);
+
 }
