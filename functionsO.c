@@ -10,11 +10,11 @@ int interactive(info_t *info)
 }
 
 /**
- * is_delimt - check s'il y a un character delimiter
+ * is_delim - check s'il y a un character delimiter
  * @c:charachter
  * @del: delimiter
  */
-int is_delimt(char c, char *del)
+int is_delim(char c, char *del)
 {
 	while (*del)
 		if (*del++ == c)
@@ -23,11 +23,11 @@ int is_delimt(char c, char *del)
 }
 
 /**
- * _alpha - check pour les alphabets
+ * _isalpha - check pour les alphabets
  * @c: character
  */
 
-int _alpha(int c)
+int _isalpha(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		return (1);
@@ -36,11 +36,11 @@ int _alpha(int c)
 }
 
 /**
- * _stin - conventions d'un string a un entier
+ * _isdigit - conventions d'un string a un entier
  * @s: un string
  */
 
-int _stin(char *s)
+int _isdigit(char *s)
 {
 	int i, sign = 1, flag = 0, output;
 	unsigned int result = 0;

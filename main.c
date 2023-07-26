@@ -35,8 +35,8 @@ int main(int argc, char **argv)
 		}
 		info->readfd = fd;
 	}
-	populate_env_list(info);
+	populate_env_list(info);/*the adresse of the info*/
 	read_history(info);
-	hsh(info, argv);
+	hsh(info, argv);/*te adresse o fthe info and the arg*/
 	return (EXIT_SUCCESS);
 }

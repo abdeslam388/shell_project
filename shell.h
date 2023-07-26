@@ -45,17 +45,18 @@ extern char **environ;
  */
 typedef struct liststr
 {
-	int num;
-	char *str;
-	struct liststr *next;
-} list_t;
+    int num;
+    char *str;
+    struct liststr *next;
+}
+ list_t;
 
 /**
  * struct passinfo - contains pseudo-arguements to pass into a function,
  * allowing uniform prototype for function pointer struct
  * @arg: a string generated from getline contenant des arguments
  * @argv:un tableux de strings 
- * @path: a string path pour la command actuelle
+ * @path: a string path for the current command.
  * @argc: the argument counter
  * @line_count: the error 
  * @err_num: le code error  pour exit()s
@@ -74,26 +75,26 @@ typedef struct liststr
  */
 typedef struct passinfo
 {
-	int argc;
-	char **argv;
-	char *arg;
-	char *path;
-	unsigned int line_count;
-	int err_num;
-	int linecount_flag;
-	char *fname;
-	list_t *history;
-	list_t *alias;
-	list_t *env;
-	int env_changed;
-	char **environ;
-	int status;
+    int argc;
+    char **argv;
+    char *arg;
+    char *path;
+    unsigned int line_count;
+    int err_num;
+    int linecount_flag;
+    char *fname;
+    list_t *history;
+    list_t *alias;
+    list_t *env;
+    int env_changed;
+    char **environ;
+    int status;
 
-	char **cmd_buf; /* pointeure du commande ; chaine buffer, memory mangement */
-	int cmd_buf_type; /* CMD_type ||, &&, ; */
-	int readfd;
-	int histcount;
-} 
+    char **cmd_buf;
+    int cmd_buf_type;
+    int readfd;
+    int histcount;
+} info_t;
 info_t;
 #define INFO_INIT \
 {NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
@@ -122,7 +123,7 @@ int loophsh(char **);
 
 /*path.c */
 int is_cmd(info_t *, char *);
-char *_dupchar(char *, int, int);
+char *_dupchars(char *, int, int);
 char *find_path(info_t *, char *, char *);
 
 /* error_string_functions.c */
@@ -149,8 +150,8 @@ char *_strncat(char *, char *, int);
 char *_strchr(char *, char);
 
 /*str_tokenizer.c */
-char **strk(char *, char *);
-char **strk2(char *, char);
+char **strtow(char *, char *);
+char **strtow1(char *, char);
 
 /* realloc.c */
 char *_memset(char *, char, unsigned int);
@@ -162,9 +163,9 @@ int bfree(void **);
 
 /*functionsO.c*/
 int interactive(info_t *);
-int is_delimt(char, char *);
-int _alpha(int);
-int _stin(char *);
+int is_delim(char, char *);
+int _isalpha(int);
+int _isdigit(char *);
 
 /*functions1.c*/
 int _errstin(char *);
@@ -174,18 +175,18 @@ char *convert_number(long int, int, int);
 void rm_comments(char *);
 
 /*builtinO.c */
-int _eexit(info_t *);
-int _ccd(info_t *);
-int _hhelp(info_t *);
+int _myexit(info_t *);
+int _mycd(info_t *);
+int _myhelp(info_t *);
 
 /*builtin1.c */
-int _hhistory(info_t *);
-int _alias(info_t *);
+int _myhistory(info_t *);
+int _myalias(info_t *);
 
 /*get_line.c  */
 ssize_t get_input(info_t *);
 int _getline(info_t *, char **, size_t *);
-void siginHandler(int);
+void sigintHandler(int);
 
 /*get_info.c */
 void clear_info(info_t *);
@@ -205,7 +206,7 @@ int _unsetenv(info_t *, char *);
 int _setenv(info_t *, char *, char *);
 
 /*_history.c */
-char *gets_history_file(info_t *info);
+char *get_history_file(info_t *info);
 int write_history(info_t *info);
 int read_history(info_t *info);
 int build_history_list(info_t *info, char *buf, int linecount);
@@ -231,6 +232,4 @@ void check_chain(info_t *, char *, size_t *, size_t, size_t);
 int replace_alias(info_t *);
 int replace_virs(info_t *);
 int replace_string(char **, char *);
-
 #endif
-

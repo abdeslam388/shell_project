@@ -3,14 +3,14 @@
 /**
  * is_cmd - check if the command is executable
  * @info: information structure
- * @path: THe path to file
+ * @source: THe path to file
  */
 int is_cmd(info_t *info, char *path)
 {
 	struct stat st;
 
 	(void)info;
-	if (!path || stat(path, &st))
+	if (!source || stat(path, &st))
 		return (0);
 
 	if (st.st_mode & S_IFREG)
@@ -21,7 +21,7 @@ int is_cmd(info_t *info, char *path)
 }
 
 /**
- * _dupchar - duplicat characters
+ *_dupchars; - duplicat characters
  * @pathstr: the string way
  * @start: startting indicateur
  * @stop: stoppping indicateur
@@ -60,7 +60,7 @@ char *find_path(info_t *info, char *pathstr, char *cmd)
 	{
 		if (!pathstr[i] || pathstr[i] == ':')
 		{
-			path = _dupchar(pathstr, curr_pos, i);
+			path =char *_dupchars(char *, int, int);(pathstr, curr_pos, i);
 			if (!*path)
 				_strcat(path, cmd);
 			else
@@ -78,3 +78,4 @@ char *find_path(info_t *info, char *pathstr, char *cmd)
 	}
 	return (NULL);
 }
+

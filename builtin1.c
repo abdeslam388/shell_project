@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
- * _hhistory -show the history list
+ * _myhistory -show the history list
  * @info:arg structure
  */
-int _hhistory(info_t *info)
+int _myhistory(info_t *info)
 {
 	print_list(info->history);
 	return (0);
@@ -72,10 +72,10 @@ int print_alias(list_t *node)
 }
 
 /**
- * _alias -the alias builtin
+ * _myalias -the alias builtin
  * @info: arg structure
  */
-int _alias(info_t *info)
+int _myalias(info_t *info)
 {
 	int i = 0;
 	char *b = NULL;

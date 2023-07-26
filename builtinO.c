@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
- * _eexit - exit shell
+ * _myexit - exit shell
  * @info: Structure
  */
-int _eexit(info_t *info)
+int _myexit(info_t *info)
 {
 	int exitcheck;
 
@@ -27,10 +27,10 @@ int _eexit(info_t *info)
 }
 
 /**
- * _ccd - change directory
+ * _mycd - change directory
  * @info: Structure 
  */
-int _ccd(info_t *info)
+int _mycd(info_t *info)
 {
 	char *c, *dir, buffer[1024];
 	int chdir_ret;
@@ -75,10 +75,10 @@ int _ccd(info_t *info)
 }
 
 /**
- * _hhelp - changez le directory actuelle 
+ * _myhelp - changez le directory actuelle 
  * @info: arg structure
  */
-int _hhelp(info_t *info)
+int _myhelp(info_t *info)
 {
 	char **arg_array;
 

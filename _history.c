@@ -1,11 +1,11 @@
-i#include "shell.h"
+#include "shell.h"
 
 /**
- * gets_history_file - have the history file
+ * get_history_file - have the history file
  * @info: struct
  */
 
-char *gets_history_file(info_t *info)
+char *get_history_file(info_t *info)
 {
 	char *buf, *dr;
 
@@ -29,7 +29,7 @@ char *gets_history_file(info_t *info)
 int write_history(info_t *info)
 {
 	ssize_t fd;
-	char *filename = gets_history_file(info);
+	char *filename = get_history_file(info);
 	list_t *node = NULL;
 
 	if (!filename)
@@ -58,7 +58,7 @@ int read_history(info_t *info)
 	int a, last = 0, linecount = 0;
 	ssize_t fd, rdlen, fsize = 0;
 	struct stat st;
-	char *buf = NULL, *filename = gets_history_file(info);
+	char *buf = NULL, *filename = get_history_file(info);
 
 	if (!filename)
 		return (0);

@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * **strk - separez un string au mots()"Repeat delimiters are ignored")
+ * **strtow - separez un string au mots()"Repeat delimiters are ignored")
  * @d:delimiters str.
  * @str: string
  */
 
-char **strk(char *str, char *d)
+char **strtow(char *str, char *d)
 {
 	int i, j, k, l, numwords = 0;
 	char **s;
@@ -46,11 +46,11 @@ char **strk(char *str, char *d)
 }
 
 /**
- * **strk2 - splits a string into words
+ * **strtow1 - splits a string into words
  * @d: the delimeter
  * @str: the input str.
  */
-char **strk2(char *str, char d)
+char **strtow1(char *str, char d)
 {
 	int i, j, k, l, numwords = 0;
 	char **s;
@@ -88,5 +88,4 @@ char **strk2(char *str, char d)
 	s[j] = NULL;
 	return (s);
 }
-
 
